@@ -1,0 +1,60 @@
+@mixin chat {
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(46, 46, 46);
+    }
+
+    .chat-avatar {
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .chat-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .username,
+        .message-preview {
+            color: $fontColor;
+            margin: 0;
+        }
+
+        .username {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .message-preview {
+            font-size: 14px;
+        }
+    }
+}
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        background: rgba(83, 83, 83, 0);
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(122, 122, 122, 0);
+    }
+
+    &:hover {
+
+        &::-webkit-scrollbar {
+            background: rgba(83, 83, 83, 0);
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgb(122, 122, 122);
+            border-radius: 50px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+img {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+$fontColor: #eee;
+
+.container-fluid {
+    height: 100vh;
+    padding: 0;
+    overflow-y: hidden;
+    background: #343434;
+    display: flex;
+
+    @import "./components/components";
+
+    @import "./chatlist/chatlist";
+    @import "./current-chat/current-chat-container";
+}

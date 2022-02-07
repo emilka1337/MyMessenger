@@ -1,0 +1,6 @@
+.current-chat-container {
+    width: 75%;
+    @import "./header";
+    @import "./chat";
+    @import "./footer";
+}

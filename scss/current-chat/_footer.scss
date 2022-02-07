@@ -1,0 +1,47 @@
+$footerBgColor: #2e2e2e;
+
+.current-chat-footer {
+    height: 5%;
+    border-top: 1px solid #474747;
+    background: $footerBgColor;
+
+    .attach-file {
+        display: none;
+    }
+
+    label[for="attachFile"] {
+        width: 5%;
+        height: 100%;
+        color: $fontColor;
+        cursor: pointer;
+        padding: 5px 0px;
+        text-align: center;
+        transition: 300ms;
+
+        &:hover {
+            background: rgb(46, 46, 46);
+        }
+    }
+
+    input[type="text"] {
+        width: 90%;
+        padding: 5px 0px;
+        background: none;
+        outline: none;
+        border: none;
+        color: #fff;
+    }
+
+    .send-message {
+        width: 4%;
+        background: none;
+        border: none;
+        color: $fontColor;
+        transition: 300ms;
+        padding: 5px 0px;
+
+        &:hover {
+            background: rgb(46, 46, 46);
+        }
+    }
+}
