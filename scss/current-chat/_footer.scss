@@ -1,9 +1,13 @@
 $footerBgColor: #2e2e2e;
 
 .current-chat-footer {
-    height: 5%;
+    height: 8%;
     border-top: 1px solid #474747;
     background: $footerBgColor;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
 
     .attach-file {
         display: none;
@@ -14,17 +18,18 @@ $footerBgColor: #2e2e2e;
         height: 100%;
         color: $fontColor;
         cursor: pointer;
-        padding: 5px 0px;
+        padding: 10px 0px;
         text-align: center;
         transition: 300ms;
 
         &:hover {
             background: rgb(46, 46, 46);
+            color: $accentColor;
         }
     }
 
     input[type="text"] {
-        width: 90%;
+        width: 85%;
         padding: 5px 0px;
         background: none;
         outline: none;
@@ -32,7 +37,10 @@ $footerBgColor: #2e2e2e;
         color: #fff;
     }
 
-    .send-message {
+
+
+    .send-message,
+    .toggle-emoji-panel {
         width: 4%;
         background: none;
         border: none;
@@ -42,6 +50,36 @@ $footerBgColor: #2e2e2e;
 
         &:hover {
             background: rgb(46, 46, 46);
+            color: $accentColor;
+        }
+    }
+
+    .emoji-panel {
+        display: none;
+        width: 300px;
+        height: 200px;
+        padding: 10px;
+        position: absolute;
+        background: $footerBgColor;
+        right: 20px;
+        bottom: 8%;
+        overflow: hidden scroll;
+
+        &.show {
+            display: initial;
+        }
+
+        .emoji {
+            width: calc(100% / 6);
+            border: none;
+            background: none;
+            padding: 5px 0px;
+            color: $fontColor;
+
+            &:hover {
+                background-color: #474747;
+            }
+
         }
     }
 }

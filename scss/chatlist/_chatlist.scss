@@ -5,6 +5,8 @@
     overflow-y: scroll;
     overflow-x: hidden;
     border-right: 1px solid rgb(71, 71, 71);
+    box-shadow: 1px 0px 3px #000;
+    z-index: 100;
 
     @include scrollbar;
 

@@ -2,8 +2,16 @@
     padding: 5px 10px;
     cursor: pointer;
 
+    &.active {
+        background: $accentColor;
+        
+        &:hover {
+            background: $accentColor;
+        }
+    }
+
     &:hover {
-        background-color: rgb(46, 46, 46);
+        background: rgb(46, 46, 46);
     }
 
     .chat-avatar {

@@ -1,5 +1,3 @@
-import UI from './ui'
-
 class ChatList {
     constructor() {
         this.chatList = [];
@@ -35,10 +33,32 @@ class ChatList {
 
         chat.addEventListener("click", () => this._displayChat(params.chatID));
 
+        chat.addEventListener('click', function () {
+            document.querySelectorAll('.chat').forEach(chat => chat.classList.remove('active'));
+            chat.classList.add('active');
+        })
+
         return chat;
     }
 
-    createChatList() {
+    _displayChat(id) {
+        let currentChat = this.chatList.find(chat => chat.chatID == id);
+
+        console.log(currentChat);
+        // Дописать функцию
+    }
+
+    // _toggleActiveChatColor() {
+    //     document.querySelectorAll('.chat').forEach((chat, chatIndex, allChats) => {
+    //         chat.addEventListener('click', function () {
+    //             allChats.forEach(chat => chat.classList.remove('active'));
+
+    //             chat.classList.add('active');
+    //         })
+    //     });
+    // }
+
+    init() {
         for (let i = 0; i < 5; i++) {
             let params = {
                 username: "Ako, Nazadi daniwan?",
@@ -56,16 +76,7 @@ class ChatList {
         console.log(this.chatList);
     }
 
-    _displayChat(id) {
-        let currentChat = this.chatList.find(chat => chat.chatID == id);
-
-        console.log(currentChat);
-        // Дописать функцию
-    }
+    
 }
 
-let chatList = new ChatList();
-
-module.exports = {
-    chatList,
-}
+module.exports = ChatList;

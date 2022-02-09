@@ -1,5 +1,4 @@
-class UI {
-    //#region In Chat Menu
+class ChatHeader {
     _toggleInChatMenu() {
         let menu = document.querySelector('#inChatMenu');
 
@@ -14,7 +13,7 @@ class UI {
         document.querySelector('#inChatMenu').classList.remove('show');
     }
 
-    _addInChatMenuListeners() {
+    init() {
         document.body.addEventListener('click', () => {
             this._hideInChatMenu();
         });
@@ -28,15 +27,8 @@ class UI {
             e.stopPropagation();
         });
     }
-    //#endregion
 
-    //#region Chatlist
     
-    //#endregion
-
-    addAllEventListeners() {
-        this._addInChatMenuListeners();
-    }
 }
 
-export default UI;
+module.exports = ChatHeader;

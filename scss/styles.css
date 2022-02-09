@@ -24,6 +24,9 @@ img {
   overflow-y: scroll;
   overflow-x: hidden;
   border-right: 1px solid #474747;
+  -webkit-box-shadow: 1px 0px 3px #000;
+          box-shadow: 1px 0px 3px #000;
+  z-index: 100;
 }
 
 .container-fluid .chatlist::-webkit-scrollbar {
@@ -50,8 +53,16 @@ img {
   cursor: pointer;
 }
 
+.container-fluid .chatlist .chat.active {
+  background: #b90000;
+}
+
+.container-fluid .chatlist .chat.active:hover {
+  background: #b90000;
+}
+
 .container-fluid .chatlist .chat:hover {
-  background-color: #2e2e2e;
+  background: #2e2e2e;
 }
 
 .container-fluid .chatlist .chat .chat-avatar img {
@@ -104,6 +115,8 @@ img {
   background: #2e2e2e;
   border-bottom: 1px solid #474747;
   height: 10%;
+  -webkit-box-shadow: 5px 0px 5px #000;
+          box-shadow: 5px 0px 5px #000;
 }
 
 .container-fluid .current-chat-container header .header-left {
@@ -117,6 +130,7 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-left: 10px;
 }
 
 .container-fluid .current-chat-container header .header-left .current-chat-username,
@@ -161,23 +175,23 @@ img {
 
 .container-fluid .current-chat-container header .header-right > ul .in-chat-menu {
   height: 0;
-  width: 0;
   overflow: hidden;
   -webkit-transition: 300ms;
   transition: 300ms;
   position: absolute;
-  top: 69px;
+  top: 118%;
   right: -10px;
   background: #2e2e2e;
   list-style: none;
   margin: 0;
   padding: 0;
   border-top: none;
+  -webkit-box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container-fluid .current-chat-container header .header-right > ul .in-chat-menu.show {
   height: 100px;
-  width: 200px;
   border: 1px solid #474747;
 }
 
@@ -192,6 +206,10 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
 }
 
 .container-fluid .current-chat-container header .header-right > ul .in-chat-menu button:hover {
@@ -203,13 +221,23 @@ img {
 }
 
 .container-fluid .current-chat-container .current-chat {
-  height: 85%;
+  height: 82%;
 }
 
 .container-fluid .current-chat-container .current-chat-footer {
-  height: 5%;
+  height: 8%;
   border-top: 1px solid #474747;
   background: #2e2e2e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container-fluid .current-chat-container .current-chat-footer .attach-file {
@@ -221,7 +249,7 @@ img {
   height: 100%;
   color: #eee;
   cursor: pointer;
-  padding: 5px 0px;
+  padding: 10px 0px;
   text-align: center;
   -webkit-transition: 300ms;
   transition: 300ms;
@@ -229,10 +257,11 @@ img {
 
 .container-fluid .current-chat-container .current-chat-footer label[for="attachFile"]:hover {
   background: #2e2e2e;
+  color: #b90000;
 }
 
 .container-fluid .current-chat-container .current-chat-footer input[type="text"] {
-  width: 90%;
+  width: 85%;
   padding: 5px 0px;
   background: none;
   outline: none;
@@ -240,7 +269,8 @@ img {
   color: #fff;
 }
 
-.container-fluid .current-chat-container .current-chat-footer .send-message {
+.container-fluid .current-chat-container .current-chat-footer .send-message,
+.container-fluid .current-chat-container .current-chat-footer .toggle-emoji-panel {
   width: 4%;
   background: none;
   border: none;
@@ -250,7 +280,37 @@ img {
   padding: 5px 0px;
 }
 
-.container-fluid .current-chat-container .current-chat-footer .send-message:hover {
+.container-fluid .current-chat-container .current-chat-footer .send-message:hover,
+.container-fluid .current-chat-container .current-chat-footer .toggle-emoji-panel:hover {
   background: #2e2e2e;
+  color: #b90000;
+}
+
+.container-fluid .current-chat-container .current-chat-footer .emoji-panel {
+  display: none;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  position: absolute;
+  background: #2e2e2e;
+  right: 20px;
+  bottom: 8%;
+  overflow: hidden scroll;
+}
+
+.container-fluid .current-chat-container .current-chat-footer .emoji-panel.show {
+  display: initial;
+}
+
+.container-fluid .current-chat-container .current-chat-footer .emoji-panel .emoji {
+  width: calc(100% / 6);
+  border: none;
+  background: none;
+  padding: 5px 0px;
+  color: #eee;
+}
+
+.container-fluid .current-chat-container .current-chat-footer .emoji-panel .emoji:hover {
+  background-color: #474747;
 }
 /*# sourceMappingURL=styles.css.map */

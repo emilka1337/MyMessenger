@@ -8,11 +8,13 @@ header {
     background: $headerBgColor;
     border-bottom: 1px solid rgb(71, 71, 71);
     height: 10%;
+    box-shadow: 5px 0px 5px #000;
 
     .header-left {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-left: 10px;
 
         .current-chat-username,
         .online {
@@ -55,21 +57,23 @@ header {
 
             .in-chat-menu {
                 height: 0;
-                width: 0;
+                // width: 0;
                 overflow: hidden;
                 transition: 300ms;
                 position: absolute;
-                top: 69px;
+                // top: 69px;
+                top: 118%;
                 right: -10px;
                 background: $headerBgColor;
                 list-style: none;
                 margin: 0;
                 padding: 0;
                 border-top: none;
+                box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
 
                 &.show {
                     height: 100px;
-                    width: 200px;
+                    // width: 200px;
                     border: 1px solid rgb(71, 71, 71);
                 }
 
@@ -80,6 +84,8 @@ header {
                     padding: 8px 15px;
                     display: flex;
                     align-items: center;
+                    justify-content: center;
+                    width: 150px;
 
                     &:hover {
                         background-color: rgb(77, 77, 77);

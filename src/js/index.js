@@ -1,7 +1,9 @@
-import { chatList } from "./chatList";
-import UI from "./ui";
+import ChatList from "./chatList";
+import ChatHeader from "./chatHeader";
+import CurrentChat from "./currentChat";
 
-chatList.createChatList();
+let chatHeader = new ChatHeader();
+let chatList = new ChatList();
+let currentChat = new CurrentChat();
 
-let ui = new UI();
-ui.addAllEventListeners();
+[chatHeader, chatList, currentChat].forEach(component => component.init());
