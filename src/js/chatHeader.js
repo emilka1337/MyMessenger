@@ -31,4 +31,4 @@ class ChatHeader {
     
 }
 
-module.exports = ChatHeader;
+export default ChatHeader;

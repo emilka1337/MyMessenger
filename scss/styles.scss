@@ -18,6 +18,7 @@ $accentColor: rgb(185, 0, 0);
 
     @import "./components/components";
 
+    @import "./sidebar/sidebar";
     @import "./chatlist/chatlist";
     @import "./current-chat/current-chat-container";
 }

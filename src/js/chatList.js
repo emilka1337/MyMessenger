@@ -1,6 +1,6 @@
 class ChatList {
     constructor() {
-        this.chatList = [];
+        this._chatList = [];
     }
 
     _createChatContainer(params = { username, messagePreview, avatar, chatID }) {
@@ -31,7 +31,7 @@ class ChatList {
         chatInfo.append(h4);
         chatInfo.append(p);
 
-        chat.addEventListener("click", () => this._displayChat(params.chatID));
+        chat.addEventListener("click", () => this._openChat(params));
 
         chat.addEventListener('click', function () {
             document.querySelectorAll('.chat').forEach(chat => chat.classList.remove('active'));
@@ -41,42 +41,34 @@ class ChatList {
         return chat;
     }
 
-    _displayChat(id) {
-        let currentChat = this.chatList.find(chat => chat.chatID == id);
+    _openChat(params = { username, messagePreview, avatar, chatID }) {
+        let currentChat = this.chatList.find(chat => chat.chatID == params.chatID);
 
         console.log(currentChat);
         // Дописать функцию
     }
 
-    // _toggleActiveChatColor() {
-    //     document.querySelectorAll('.chat').forEach((chat, chatIndex, allChats) => {
-    //         chat.addEventListener('click', function () {
-    //             allChats.forEach(chat => chat.classList.remove('active'));
-
-    //             chat.classList.add('active');
-    //         })
-    //     });
-    // }
-
-    init() {
-        for (let i = 0; i < 5; i++) {
+    _displayChats() {
+        for (let i = 0; i < 20; i++) {
             let params = {
                 username: "Ako, Nazadi daniwan?",
                 messagePreview: "Lorem ipsum dolor sit amet consectetur.",
                 avatar: "../src/img/avatar.jpg",
                 chatID: i
             }
-            
-            this.chatList.push(params);
+
+            this._chatList.push(params);
 
             let chatContainer = this._createChatContainer(params);
-            document.querySelector('.chatlist').append(chatContainer);
+            document.querySelector('.chatlist-container .chatlist').append(chatContainer);
         }
 
-        console.log(this.chatList);
+        console.log(this._chatList);
     }
 
-    
+    init() {
+        this._displayChats();
+    }
 }
 
-module.exports = ChatList;
+export default ChatList;

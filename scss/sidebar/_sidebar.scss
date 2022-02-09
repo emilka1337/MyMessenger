@@ -1,0 +1,71 @@
+.sidebar {
+    position: absolute;
+    left: -25%;
+    height: 100vh;
+    width: 25%;
+    background: #2e2e2e;
+    z-index: 100;
+    transition: 500ms;
+
+    &.show {
+        left: 0;
+    }
+
+    header {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 20px;
+        background: $accentColor;
+
+        img {
+            height: 50%;
+            border-radius: 50%;
+        }
+
+        h5 {
+            color: $fontColor;
+        }
+    }
+
+    nav {
+        height: 70%;
+        padding: 20px 0px;
+
+        ul {
+            list-style: none;
+
+            li {
+                &:last-child {
+                    margin-top: 50px;
+                }
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    background: none;
+                    color: $fontColor;
+
+                    &:hover {
+                        color: #fff;
+                    }
+
+                    span {
+                        margin: 0px 10px;
+                    }
+                }
+
+                .dark-mode-toggler {
+                    @include switcher;
+
+                    span {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

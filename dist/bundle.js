@@ -7,15 +7,16 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/chatHeader.js":
 /*!******************************!*\
   !*** ./src/js/chatHeader.js ***!
   \******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("class ChatHeader {\n  _toggleInChatMenu() {\n    let menu = document.querySelector('#inChatMenu');\n\n    if (menu.classList.contains('show')) {\n      menu.classList.remove('show');\n    } else {\n      menu.classList.add('show');\n    }\n  }\n\n  _hideInChatMenu() {\n    document.querySelector('#inChatMenu').classList.remove('show');\n  }\n\n  init() {\n    document.body.addEventListener('click', () => {\n      this._hideInChatMenu();\n    });\n    document.querySelector('#inChatMenuButton').addEventListener('click', e => {\n      e.stopPropagation();\n\n      this._toggleInChatMenu();\n    });\n    document.querySelector('#inChatMenu').addEventListener('click', e => {\n      e.stopPropagation();\n    });\n  }\n\n}\n\nmodule.exports = ChatHeader;\n\n//# sourceURL=webpack://mymessenger/./src/js/chatHeader.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass ChatHeader {\n  _toggleInChatMenu() {\n    let menu = document.querySelector('#inChatMenu');\n\n    if (menu.classList.contains('show')) {\n      menu.classList.remove('show');\n    } else {\n      menu.classList.add('show');\n    }\n  }\n\n  _hideInChatMenu() {\n    document.querySelector('#inChatMenu').classList.remove('show');\n  }\n\n  init() {\n    document.body.addEventListener('click', () => {\n      this._hideInChatMenu();\n    });\n    document.querySelector('#inChatMenuButton').addEventListener('click', e => {\n      e.stopPropagation();\n\n      this._toggleInChatMenu();\n    });\n    document.querySelector('#inChatMenu').addEventListener('click', e => {\n      e.stopPropagation();\n    });\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatHeader);\n\n//# sourceURL=webpack://mymessenger/./src/js/chatHeader.js?");
 
 /***/ }),
 
@@ -23,9 +24,9 @@ eval("class ChatHeader {\n  _toggleInChatMenu() {\n    let menu = document.query
 /*!****************************!*\
   !*** ./src/js/chatList.js ***!
   \****************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("class ChatList {\n  constructor() {\n    this.chatList = [];\n  }\n\n  _createChatContainer(params = {\n    username,\n    messagePreview,\n    avatar,\n    chatID\n  }) {\n    let chat = document.createElement(\"div\");\n    chat.className = \"row chat\";\n    chat.dataset.chatID = params.chatID;\n    let chatAvatar = document.createElement(\"div\");\n    chatAvatar.className = \"col-3 chat-avatar\";\n    let img = document.createElement(\"img\");\n    img.src = params.avatar;\n    let chatInfo = document.createElement(\"div\");\n    chatInfo.className = \"col-9 chat-info\";\n    let h4 = document.createElement(\"h4\");\n    h4.className = \"username\";\n    h4.innerHTML = params.username;\n    let p = document.createElement(\"p\");\n    p.className = \"message-preview\";\n    p.innerHTML = params.messagePreview;\n    chat.append(chatAvatar);\n    chatAvatar.append(img);\n    chat.append(chatInfo);\n    chatInfo.append(h4);\n    chatInfo.append(p);\n    chat.addEventListener(\"click\", () => this._displayChat(params.chatID));\n    chat.addEventListener('click', function () {\n      document.querySelectorAll('.chat').forEach(chat => chat.classList.remove('active'));\n      chat.classList.add('active');\n    });\n    return chat;\n  }\n\n  _displayChat(id) {\n    let currentChat = this.chatList.find(chat => chat.chatID == id);\n    console.log(currentChat); // Дописать функцию\n  } // _toggleActiveChatColor() {\n  //     document.querySelectorAll('.chat').forEach((chat, chatIndex, allChats) => {\n  //         chat.addEventListener('click', function () {\n  //             allChats.forEach(chat => chat.classList.remove('active'));\n  //             chat.classList.add('active');\n  //         })\n  //     });\n  // }\n\n\n  init() {\n    for (let i = 0; i < 5; i++) {\n      let params = {\n        username: \"Ako, Nazadi daniwan?\",\n        messagePreview: \"Lorem ipsum dolor sit amet consectetur.\",\n        avatar: \"../src/img/avatar.jpg\",\n        chatID: i\n      };\n      this.chatList.push(params);\n\n      let chatContainer = this._createChatContainer(params);\n\n      document.querySelector('.chatlist').append(chatContainer);\n    }\n\n    console.log(this.chatList);\n  }\n\n}\n\nmodule.exports = ChatList;\n\n//# sourceURL=webpack://mymessenger/./src/js/chatList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass ChatList {\n  constructor() {\n    this._chatList = [];\n  }\n\n  _createChatContainer(params = {\n    username,\n    messagePreview,\n    avatar,\n    chatID\n  }) {\n    let chat = document.createElement(\"div\");\n    chat.className = \"row chat\";\n    chat.dataset.chatID = params.chatID;\n    let chatAvatar = document.createElement(\"div\");\n    chatAvatar.className = \"col-3 chat-avatar\";\n    let img = document.createElement(\"img\");\n    img.src = params.avatar;\n    let chatInfo = document.createElement(\"div\");\n    chatInfo.className = \"col-9 chat-info\";\n    let h4 = document.createElement(\"h4\");\n    h4.className = \"username\";\n    h4.innerHTML = params.username;\n    let p = document.createElement(\"p\");\n    p.className = \"message-preview\";\n    p.innerHTML = params.messagePreview;\n    chat.append(chatAvatar);\n    chatAvatar.append(img);\n    chat.append(chatInfo);\n    chatInfo.append(h4);\n    chatInfo.append(p);\n    chat.addEventListener(\"click\", () => this._openChat(params));\n    chat.addEventListener('click', function () {\n      document.querySelectorAll('.chat').forEach(chat => chat.classList.remove('active'));\n      chat.classList.add('active');\n    });\n    return chat;\n  }\n\n  _openChat(params = {\n    username,\n    messagePreview,\n    avatar,\n    chatID\n  }) {\n    let currentChat = this.chatList.find(chat => chat.chatID == params.chatID);\n    console.log(currentChat); // Дописать функцию\n  }\n\n  _displayChats() {\n    for (let i = 0; i < 20; i++) {\n      let params = {\n        username: \"Ako, Nazadi daniwan?\",\n        messagePreview: \"Lorem ipsum dolor sit amet consectetur.\",\n        avatar: \"../src/img/avatar.jpg\",\n        chatID: i\n      };\n\n      this._chatList.push(params);\n\n      let chatContainer = this._createChatContainer(params);\n\n      document.querySelector('.chatlist-container .chatlist').append(chatContainer);\n    }\n\n    console.log(this._chatList);\n  }\n\n  init() {\n    this._displayChats();\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatList);\n\n//# sourceURL=webpack://mymessenger/./src/js/chatList.js?");
 
 /***/ }),
 
@@ -33,9 +34,29 @@ eval("class ChatList {\n  constructor() {\n    this.chatList = [];\n  }\n\n  _cr
 /*!*******************************!*\
   !*** ./src/js/currentChat.js ***!
   \*******************************/
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("class CurrentChat {\n  _createEmoji(code) {\n    let button = document.createElement(\"button\");\n    button.innerHTML = `&#${code};`;\n    button.className = \"emoji\";\n    button.addEventListener(\"click\", function () {\n      let message = document.querySelector('#messageInput').value;\n      message += this.innerHTML;\n      document.querySelector('#messageInput').value = message;\n    });\n    return button;\n  }\n\n  _fillEmojiPanel() {\n    for (let i = 128512; i <= 129472; i++) {\n      document.querySelector('#emojiPanel').append(this._createEmoji(i));\n    }\n  }\n\n  _toggleEmojiPanel() {\n    document.querySelector('#emojiPanel').classList.toggle(\"show\");\n  }\n\n  init() {\n    this._fillEmojiPanel();\n\n    document.querySelector('#toggleEmojiPanel').addEventListener(\"click\", e => {\n      e.preventDefault();\n      debugger;\n\n      this._toggleEmojiPanel();\n    });\n  }\n\n}\n\nmodule.exports = CurrentChat;\n\n//# sourceURL=webpack://mymessenger/./src/js/currentChat.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass CurrentChat {\n  init() {}\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CurrentChat);\n\n//# sourceURL=webpack://mymessenger/./src/js/currentChat.js?");
+
+/***/ }),
+
+/***/ "./src/js/darkMode.js":
+/*!****************************!*\
+  !*** ./src/js/darkMode.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass DarkMode {\n  _toggleDarkMode() {\n    document.querySelector('#sidebarDarkModeToggler .switch-btn').classList.toggle(\"switch-on\");\n  }\n\n  init() {\n    document.querySelector('#sidebarDarkModeToggler').addEventListener('click', this._toggleDarkMode);\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DarkMode);\n\n//# sourceURL=webpack://mymessenger/./src/js/darkMode.js?");
+
+/***/ }),
+
+/***/ "./src/js/emojiPanel.js":
+/*!******************************!*\
+  !*** ./src/js/emojiPanel.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass EmojiPanel {\n  _createEmoji(code) {\n    let button = document.createElement(\"button\");\n    button.innerHTML = `&#${code};`;\n    button.className = \"emoji\";\n    button.addEventListener(\"click\", function () {\n      let message = document.querySelector('#messageInput').value;\n      message += this.innerHTML;\n      document.querySelector('#messageInput').value = message;\n    });\n    return button;\n  }\n\n  _fillEmojiPanel() {\n    for (let i = 128512; i <= 129472; i++) {\n      document.querySelector('#emojiPanel').append(this._createEmoji(i));\n    }\n  }\n\n  _toggleEmojiPanel() {\n    document.querySelector('#emojiPanel').classList.toggle(\"show\");\n  }\n\n  _hideEmojiPanel() {\n    document.querySelector('#emojiPanel').classList.remove(\"show\");\n  }\n\n  _showEmojiPanel() {\n    document.querySelector('#emojiPanel').classList.add(\"show\");\n  }\n\n  init() {\n    this._fillEmojiPanel();\n\n    document.querySelector('#toggleEmojiPanel').addEventListener(\"click\", e => {\n      e.preventDefault();\n\n      this._toggleEmojiPanel();\n    });\n    document.querySelector('#messageInput').addEventListener(\"click\", e => {\n      this._hideEmojiPanel();\n    });\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EmojiPanel);\n\n//# sourceURL=webpack://mymessenger/./src/js/emojiPanel.js?");
 
 /***/ }),
 
@@ -45,8 +66,27 @@ eval("class CurrentChat {\n  _createEmoji(code) {\n    let button = document.cre
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _chatList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chatList */ \"./src/js/chatList.js\");\n/* harmony import */ var _chatList__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_chatList__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _chatHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chatHeader */ \"./src/js/chatHeader.js\");\n/* harmony import */ var _chatHeader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chatHeader__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _currentChat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentChat */ \"./src/js/currentChat.js\");\n/* harmony import */ var _currentChat__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_currentChat__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nlet chatHeader = new (_chatHeader__WEBPACK_IMPORTED_MODULE_1___default())();\nlet chatList = new (_chatList__WEBPACK_IMPORTED_MODULE_0___default())();\nlet currentChat = new (_currentChat__WEBPACK_IMPORTED_MODULE_2___default())();\n[chatHeader, chatList, currentChat].forEach(component => component.init());\n\n//# sourceURL=webpack://mymessenger/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _chatList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chatList */ \"./src/js/chatList.js\");\n/* harmony import */ var _chatHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chatHeader */ \"./src/js/chatHeader.js\");\n/* harmony import */ var _currentChat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./currentChat */ \"./src/js/currentChat.js\");\n/* harmony import */ var _messageInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./messageInput */ \"./src/js/messageInput.js\");\n/* harmony import */ var _emojiPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./emojiPanel */ \"./src/js/emojiPanel.js\");\n/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sidebar */ \"./src/js/sidebar.js\");\n/* harmony import */ var _darkMode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./darkMode */ \"./src/js/darkMode.js\");\n\n\n\n\n\n\n\nlet chatHeader = new _chatHeader__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\nlet chatList = new _chatList__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nlet currentChat = new _currentChat__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\nlet messageInput = new _messageInput__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\nlet emojiPanel = new _emojiPanel__WEBPACK_IMPORTED_MODULE_4__[\"default\"]();\nlet sidebar = new _sidebar__WEBPACK_IMPORTED_MODULE_5__[\"default\"]();\nlet darkMode = new _darkMode__WEBPACK_IMPORTED_MODULE_6__[\"default\"]();\n[chatHeader, chatList, currentChat, messageInput, emojiPanel, sidebar, darkMode].forEach(component => component.init());\n\n//# sourceURL=webpack://mymessenger/./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/messageInput.js":
+/*!********************************!*\
+  !*** ./src/js/messageInput.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _emojiPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./emojiPanel */ \"./src/js/emojiPanel.js\");\n\n\nclass MessageInput {\n  _sendMessage() {\n    let emojiPanel = new _emojiPanel__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\n    emojiPanel._hideEmojiPanel();\n\n    console.log(document.querySelector('#messageInput').value);\n    document.querySelector('#messageInput').value = \"\"; // Дописать функцию отправки сообщений\n  }\n\n  init() {\n    document.querySelector('#messageInputForm').addEventListener(\"submit\", e => {\n      e.preventDefault();\n\n      this._sendMessage();\n    });\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessageInput);\n\n//# sourceURL=webpack://mymessenger/./src/js/messageInput.js?");
+
+/***/ }),
+
+/***/ "./src/js/sidebar.js":
+/*!***************************!*\
+  !*** ./src/js/sidebar.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Sidebar {\n  _toggleSidebar() {\n    document.querySelector('.sidebar').classList.toggle('show');\n    document.querySelector('#sidebarToggle').classList.toggle(\"toggled\");\n  }\n\n  init() {\n    document.querySelector('#sidebarToggle').addEventListener('click', this._toggleSidebar);\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);\n\n//# sourceURL=webpack://mymessenger/./src/js/sidebar.js?");
 
 /***/ })
 
@@ -77,18 +117,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _cha
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

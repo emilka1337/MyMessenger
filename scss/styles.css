@@ -1,3 +1,4 @@
+@charset "UTF-8";
 img {
   max-width: 100%;
 }
@@ -17,59 +18,221 @@ img {
   display: flex;
 }
 
-.container-fluid .chatlist {
+.container-fluid .sidebar {
+  position: absolute;
+  left: -25%;
+  height: 100vh;
+  width: 25%;
+  background: #2e2e2e;
+  z-index: 100;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.container-fluid .sidebar.show {
+  left: 0;
+}
+
+.container-fluid .sidebar header {
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px;
+  background: #b90000;
+}
+
+.container-fluid .sidebar header img {
+  height: 50%;
+  border-radius: 50%;
+}
+
+.container-fluid .sidebar header h5 {
+  color: #eee;
+}
+
+.container-fluid .sidebar nav {
+  height: 70%;
+  padding: 20px 0px;
+}
+
+.container-fluid .sidebar nav ul {
+  list-style: none;
+}
+
+.container-fluid .sidebar nav ul li:last-child {
+  margin-top: 50px;
+}
+
+.container-fluid .sidebar nav ul li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background: none;
+  color: #eee;
+}
+
+.container-fluid .sidebar nav ul li button:hover {
+  color: #fff;
+}
+
+.container-fluid .sidebar nav ul li button span {
+  margin: 0px 10px;
+}
+
+.container-fluid .sidebar nav ul li .dark-mode-toggler .switch-btn {
+  display: inline-block;
+  width: 36px;
+  /* ширина */
+  height: 19px;
+  /* высота */
+  border-radius: 19px;
+  /* радиус скругления */
+  background: #bfbfbf;
+  /* цвет фона */
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  /* анимация */
+}
+
+.container-fluid .sidebar nav ul li .dark-mode-toggler .switch-btn::after {
+  content: "";
+  height: 15px;
+  /* высота кнопки */
+  width: 16px;
+  /* ширина кнопки */
+  border-radius: 17px;
+  background: #fff;
+  /* цвет кнопки */
+  top: 2px;
+  /* положение кнопки по вертикали относительно основы */
+  left: 1px;
+  /* положение кнопки по горизонтали относительно основы */
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  /* анимация */
+  position: absolute;
+  z-index: 1;
+}
+
+.container-fluid .sidebar nav ul li .dark-mode-toggler .switch-on {
+  background: #118c4e;
+}
+
+.container-fluid .sidebar nav ul li .dark-mode-toggler .switch-on::after {
+  left: 18px;
+}
+
+.container-fluid .sidebar nav ul li .dark-mode-toggler span {
+  margin-left: 0;
+}
+
+.container-fluid .chatlist-container {
   width: 25%;
   height: 100%;
-  padding: 20px 0px;
-  overflow-y: scroll;
-  overflow-x: hidden;
   border-right: 1px solid #474747;
   -webkit-box-shadow: 1px 0px 3px #000;
           box-shadow: 1px 0px 3px #000;
+}
+
+.container-fluid .chatlist-container header {
+  height: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-fluid .chatlist-container header button {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  color: #eee;
+  width: 50px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
   z-index: 100;
 }
 
-.container-fluid .chatlist::-webkit-scrollbar {
+.container-fluid .chatlist-container header button:hover {
+  color: #fff;
+}
+
+.container-fluid .chatlist-container header button.toggled {
+  left: 22%;
+}
+
+.container-fluid .chatlist-container .chatlist {
+  height: 95%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container-fluid .chatlist-container .chatlist::-webkit-scrollbar {
   background: rgba(83, 83, 83, 0);
   width: 4px;
 }
 
-.container-fluid .chatlist::-webkit-scrollbar-thumb {
+.container-fluid .chatlist-container .chatlist::-webkit-scrollbar-thumb {
   background: rgba(122, 122, 122, 0);
 }
 
-.container-fluid .chatlist:hover::-webkit-scrollbar {
+.container-fluid .chatlist-container .chatlist:hover::-webkit-scrollbar {
   background: rgba(83, 83, 83, 0);
   width: 4px;
 }
 
-.container-fluid .chatlist:hover::-webkit-scrollbar-thumb {
+.container-fluid .chatlist-container .chatlist:hover::-webkit-scrollbar-thumb {
   background: #7a7a7a;
   border-radius: 50px;
 }
 
-.container-fluid .chatlist .chat {
+.container-fluid .chatlist-container .chatlist .chat {
   padding: 5px 10px;
   cursor: pointer;
 }
 
-.container-fluid .chatlist .chat.active {
+.container-fluid .chatlist-container .chatlist .chat.active {
   background: #b90000;
 }
 
-.container-fluid .chatlist .chat.active:hover {
+.container-fluid .chatlist-container .chatlist .chat.active:hover {
   background: #b90000;
 }
 
-.container-fluid .chatlist .chat:hover {
+.container-fluid .chatlist-container .chatlist .chat:hover {
   background: #2e2e2e;
 }
 
-.container-fluid .chatlist .chat .chat-avatar img {
+.container-fluid .chatlist-container .chatlist .chat .chat-avatar img {
   border-radius: 50%;
 }
 
-.container-fluid .chatlist .chat .chat-info {
+.container-fluid .chatlist-container .chatlist .chat .chat-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,18 +245,18 @@ img {
           justify-content: center;
 }
 
-.container-fluid .chatlist .chat .chat-info .username,
-.container-fluid .chatlist .chat .chat-info .message-preview {
+.container-fluid .chatlist-container .chatlist .chat .chat-info .username,
+.container-fluid .chatlist-container .chatlist .chat .chat-info .message-preview {
   color: #eee;
   margin: 0;
 }
 
-.container-fluid .chatlist .chat .chat-info .username {
+.container-fluid .chatlist-container .chatlist .chat .chat-info .username {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.container-fluid .chatlist .chat .chat-info .message-preview {
+.container-fluid .chatlist-container .chatlist .chat .chat-info .message-preview {
   font-size: 14px;
 }
 
