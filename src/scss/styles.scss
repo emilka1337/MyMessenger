@@ -1,3 +1,8 @@
+@font-face {
+    font-family: GoogleSans;
+    src: url(../fonts/GoogleSans-Regular.ttf);
+}
+
 img {
     max-width: 100%;
     pointer-events: none;
@@ -6,6 +11,7 @@ img {
 * {
     box-sizing: border-box;
     user-select: none;
+    font-family: GoogleSans;
 }
 
 $fontColor: #eee;

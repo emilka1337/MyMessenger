@@ -5,24 +5,21 @@ class SettingsMenu {
         let sideBar = new SideBar;
         sideBar.hideSidebar();
 
-        document.querySelector('.settings-container').classList.add('show');
-        document.querySelector('.settings-container').classList.add('showing');
-        setTimeout(function() {
-            document.querySelector('.settings-container').classList.remove('showing');
-        }, 400);
+        document.querySelector('.settings-container').classList.add("show");
     }
 
     closeSettingsMenu() {
-        document.querySelector('.settings-container').classList.add('hiding');
-        setTimeout(function () {
-            document.querySelector('.settings-container').classList.remove('hiding');
-            document.querySelector('.settings-container').classList.remove('show');
-        }, 400);
+        document.querySelector('.settings-container').classList.remove("show");
+        document.querySelector('.settings').classList.add("hiding");
+        setTimeout(function() {
+            document.querySelector('.settings').classList.remove("hiding");
+        }, 1000);
     }
 
     init() {
         document.querySelector('#sidebarOpenSettings').addEventListener('click', this.openSettingsMenu);
         document.querySelector('.settings-container').addEventListener('click', this.closeSettingsMenu);
+        document.querySelector('.settings').addEventListener('click', (e) => e.stopPropagation());
     }
 }
 

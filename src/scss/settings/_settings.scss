@@ -9,23 +9,22 @@ $settingsBackgroundDimming: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: center;
     background-color: $settingsBackgroundDimming;
-
-    &.showing {
-        animation: settingsShowing 300ms;
-    }
-
-    &.hiding {
-        animation: settingsHiding 300ms;
-    }
+    opacity: 0;
+    transition: 500ms;
 
     &.show {
-        z-index: 500;
+        opacity: 1;
+        z-index: 200;
     }
 
     .settings {
         width: 30%;
         height: 90%;
         background: #2e2e2e;
+        
+        &.hiding {
+            animation: settingsHiding 500ms;
+        }
 
 
         header {
@@ -57,10 +56,6 @@ $settingsBackgroundDimming: rgba(0, 0, 0, 0.4);
                 padding: 0;
 
                 li {
-                    &:last-child {
-                        margin-top: 50px;
-                    }
-
                     button {
                         display: flex;
                         align-items: center;
@@ -85,42 +80,49 @@ $settingsBackgroundDimming: rgba(0, 0, 0, 0.4);
     }
 }
 
-@keyframes settingsShowing {
-    from {
-        background: none;
-
-        .settings {
-            opacity: 0;
-            transform: translateX(200px);
-        }
-    }
-
-    to {
-        background: $settingsBackgroundDimming;
-
-        .settings {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
-}
-
 @keyframes settingsHiding {
-    from {
-        background: $settingsBackgroundDimming;
-
-        .settings {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
-
-    to {
-        background: none;
-
-        .settings {
-            opacity: 0;
-            transform: translateX(200px);
-        }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
     }
 }
+
+// @keyframes settingsShowing {
+//     from {
+//         background: none;
+
+//         .settings {
+//             opacity: 0;
+//             transform: translateX(200px);
+//         }
+//     }
+
+//     to {
+//         background: $settingsBackgroundDimming;
+
+//         .settings {
+//             opacity: 1;
+//             transform: translateX(0px);
+//         }
+//     }
+// }
+
+// @keyframes settingsHiding {
+//     from {
+//         background: $settingsBackgroundDimming;
+
+//         .settings {
+//             opacity: 1;
+//             transform: translateX(0px);
+//         }
+//     }
+
+//     to {
+//         background: none;
+
+//         .settings {
+//             opacity: 0;
+//             transform: translateX(200px);
+//         }
+//     }
+// }
