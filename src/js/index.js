@@ -4,7 +4,8 @@ import CurrentChat from "./currentChat";
 import MessageInput from "./messageInput";
 import EmojiPanel from "./emojiPanel";
 import Sidebar from "./sidebar";
-import DarkMode from "./darkMode";
+// import DarkMode from "./darkMode";
+import SettingsMenu from "./settings/settings";
 
 let chatHeader = new ChatHeader();
 let chatList = new ChatList();
@@ -12,7 +13,8 @@ let currentChat = new CurrentChat();
 let messageInput = new MessageInput();
 let emojiPanel = new EmojiPanel();
 let sidebar = new Sidebar();
-let darkMode = new DarkMode();
+// let darkMode = new DarkMode();
+let settingsMenu = new SettingsMenu();
 
 [
     chatHeader,
@@ -21,5 +23,6 @@ let darkMode = new DarkMode();
     messageInput,
     emojiPanel,
     sidebar,
-    darkMode
+    // darkMode,
+    settingsMenu
 ].forEach(component => component.init());

@@ -5,7 +5,8 @@ class MessageInput {
         let emojiPanel = new EmojiPanel();
         emojiPanel._hideEmojiPanel();
 
-        console.log(document.querySelector('#messageInput').value);
+        let messageText = document.querySelector('#messageInput').value;
+        console.log(messageText);
         document.querySelector('#messageInput').value = "";
 
         // Дописать функцию отправки сообщений

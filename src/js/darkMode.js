@@ -6,6 +6,9 @@ class DarkMode {
 
     init() {
         document.querySelector('#sidebarDarkModeToggler').addEventListener('click', this._toggleDarkMode);
+        if (window.matchMedia('(prefers-color-scheme: dark)')) {
+            // проверка на включенную темную тему
+        }
     }
 }
 

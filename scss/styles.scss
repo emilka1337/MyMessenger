@@ -1,9 +1,11 @@
 img {
     max-width: 100%;
+    pointer-events: none;
 }
 
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 
 $fontColor: #eee;
@@ -21,4 +23,5 @@ $accentColor: rgb(185, 0, 0);
     @import "./sidebar/sidebar";
     @import "./chatlist/chatlist";
     @import "./current-chat/current-chat-container";
+    @import "./settings/settings";
 }

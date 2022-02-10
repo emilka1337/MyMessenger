@@ -47,9 +47,14 @@
     &::-webkit-scrollbar {
         background: rgba(83, 83, 83, 0);
         width: 4px;
+        
+        &:hover {
+            width: 6px;
+        }
     }
-
+    
     &::-webkit-scrollbar-thumb {
+        cursor: pointer;
         background: rgba(122, 122, 122, 0);
     }
 

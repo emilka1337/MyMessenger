@@ -53,7 +53,7 @@ class ChatList {
             let params = {
                 username: "Ako, Nazadi daniwan?",
                 messagePreview: "Lorem ipsum dolor sit amet consectetur.",
-                avatar: "../src/img/avatar.jpg",
+                avatar: "./src/img/avatar.jpg",
                 chatID: i
             }
 
